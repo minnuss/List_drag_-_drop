@@ -1,0 +1,110 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; // 10px
+  font-family: 'Poppins', sans-serif; // 'Montserrat', 'Roboto';
+}
+
+:root {
+  --color-border: #e3e5e4;
+  --color-bg: #c3c7ca;
+  --color-primary: #34444f;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.5rem;
+
+  h1 {
+    margin: 30px 0 20px;
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .draggable-list {
+    border: 1px solid var(--color-border);
+    columns: var(--color-primary);
+    list-style: none;
+
+    li {
+      background-color: #fff;
+      display: flex;
+      // flex: 1;
+
+      border-bottom: 1px solid var(--color-border);
+
+      &:last-of-type {
+        border-bottom: none;
+      }
+
+      // if person order is ok
+      &.right .person-name {
+        color: #3ae37f;
+      }
+      // if person order is wrong
+      &.wrong .person-name {
+        color: #ff3838;
+      }
+      // if dragged over change background
+      &.over .draggable {
+        background-color: #eaeaea;
+      }
+    }
+
+    .number {
+      background-color: var(--color-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.8rem;
+      height: 6rem;
+      width: 6rem;
+    }
+
+    .draggable {
+      width: 100%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px;
+    }
+
+    .person-name {
+      margin: 0 20px 0 0;
+    }
+  }
+
+  .check-btn {
+    margin: 15px 0;
+    background-color: var(--color-bg);
+    border: none;
+    color: var(--color-primary);
+    font-size: 1.6rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    outline: none;
+
+    &:active {
+      transform: scale(0.98);
+    }
+
+    i {
+      font-size: 2.3rem;
+    }
+  }
+}
